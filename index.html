@@ -1,0 +1,33 @@
+<html>
+<head>
+	<style>
+		body {
+			padding: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", init);
+		function init() {
+			canvas = document.getElementById("grid");
+			ctx = canvas.getContext("2d");
+			width = isNaN(window.innerWidth) ? window.clientWidth : window.innerWidth;
+			height = isNaN(window.innerHeight) ? window.clientHeight : window.innerHeight;
+			canvas.height = height;
+			canvas.width = width;
+			ctx.strokeStyle = 5;
+			for (i = 0; i < width; i+= width/20) {
+				ctx.moveTo(i, 0);
+				ctx.lineTo(i, height);
+				ctx.stroke();
+			}
+		}
+		
+		function loop() {
+		
+		}
+	</script>
+</head>
+<body>
+	<canvas id="grid" style="border-style:solid; border-width: 1px;"></canvas>
+</body>
+</html>
